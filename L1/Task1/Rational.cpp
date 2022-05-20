@@ -3,12 +3,10 @@
 
 Rational::Rational() {}
 
-Rational::Rational(long long numerator, long long denominator) {
-    if (!denominator) {
+Rational::Rational(long long _numerator, long long _denominator) : 
+    numerator(_numerator), denominator(_denominator) {
+    if (!denominator)
         throw std::invalid_argument("Received zeroed denominator");
-    }
-    this->numerator = numerator;
-    this->denominator = denominator;
     normalize();
 }
 
